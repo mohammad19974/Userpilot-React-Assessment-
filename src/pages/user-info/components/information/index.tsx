@@ -7,7 +7,7 @@ interface Props {
 }
 export const Information: React.FC<Props> = ({ shortLocation, fullname }) => {
     return (
-        <Box sx={{ textAlign: 'center' }} mt={'90px'}>
+        <Box sx={typographyNameSX} mt={'90px'}>
             <Typography
                 variant="inherit"
                 sx={{
@@ -21,13 +21,12 @@ export const Information: React.FC<Props> = ({ shortLocation, fullname }) => {
             </Typography>
 
             {shortLocation && (
-                <Typography
-                    variant="subtitle2"
-                    sx={{ color: '#87888C', letterSpacing: '0.1px' }}
-                >
+                <Typography variant="subtitle2" sx={typographySortLocationSX}>
                     {shortLocation}
                 </Typography>
             )}
         </Box>
     );
 };
+const typographyNameSX = { textAlign: 'center' };
+const typographySortLocationSX = { color: '#87888C', letterSpacing: '0.1px' };
